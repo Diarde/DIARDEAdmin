@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Invite Link</h1>
+<div mat-dialog-content>
+  <form>
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <div class="full-width">
+            email: {{data.email}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="" name="link" [(ngModel)]="link"  readonly class="iptLink">
+            <a class="lnkClippboard"   
+              [matTooltip]="message" #tooltip="matTooltip" (click)="copyToClipboard();">
+              <mat-icon>assignment</mat-icon>
+            </a>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel()" color="accent">Continue</button>
+</div>

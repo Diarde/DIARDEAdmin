@@ -1,0 +1,72 @@
+div{
+    float: left;
+  }
+
+.divList{
+    width: 200px;
+    overflow-y: auto;
+}
+
+.divLists{
+    height: 500px;
+}
+
+.cardLists{
+    height: 500px;
+}
+
+.card{
+    margin: 20px;
+    height: 800px;
+}
+
+.title{
+    width: 100%;
+}
+
+.profile{
+    float: right;
+}
+
+.loginname{
+    padding: 15px;
+}
+
+.divMenu {
+    padding-top: 10px;
+}
+
+span {
+    color: chocolate;
+}
+
+.grid_outer{
+    width: 100%;
+}
+
+.grid_right{
+    overflow: auto; 
+    float: none;
+}
+
+.babylon-canvas{
+    width: 100%;
+}
+
+.full_width{
+    width: 100%
+}
+
+.svg{
+
+    height: 700px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-350px);
+
+}
+
+canvas{
+    height: 100%;
+    width: 100%;
+}

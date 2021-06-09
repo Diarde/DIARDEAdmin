@@ -1,0 +1,91 @@
+<mat-card class="card">
+  <mat-list>
+    <mat-list-item role="listitem">
+      Name:
+      <span style="margin-left: 20px" *ngIf="!_editName">{{room.name}}</span>
+      <mat-form-field class="example-full-width" *ngIf="_editName">
+        <input matInput class="example-full-width" [(ngModel)]="roomName" (keyup.enter)="persistName(true)">
+      </mat-form-field>
+      <a class="a_create" *ngIf="!_editName" (click)="editName(roomName)">
+        <mat-icon>create</mat-icon>
+      </a>
+      <a class="a_create" *ngIf="_editName" (click)="persistName(false)">
+        <mat-icon>cancel</mat-icon>
+      </a>
+      <a class="a_create" *ngIf="_editName" (click)="persistName(true)">
+        <mat-icon>checked</mat-icon>
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      Description:
+      <span style="margin-left: 20px" *ngIf="!_editDescription">{{room.description}}</span>
+      <mat-form-field class="example-full-width" *ngIf="_editDescription">
+        <textarea id="desc" matInput (keyup.enter)="persistDescription(true)" [(ngModel)]="description"
+          name="description">
+        </textarea>
+      </mat-form-field>
+      <a class="a_create" *ngIf="!_editDescription" (click)="editDescription(description)">
+        <mat-icon>create</mat-icon>
+      </a>
+      <a class="a_create" *ngIf="_editDescription" (click)="persistDescription(false)">
+        <mat-icon>cancel</mat-icon>
+      </a>
+      <a class="a_create" *ngIf="_editDescription" (click)="persistDescription(true)">
+        <mat-icon>checked</mat-icon>
+      </a>
+    </mat-list-item>
+
+
+    <mat-list-item role="listitem">
+      Photos:
+    </mat-list-item>
+    <div cdkDropList cdkDropListOrientation="horizontal" class="photo-list" (cdkDropListDropped)="dropPhoto($event)">
+      <div (dblclick)="openImageDialog(photo.filename)" (contextmenu)="contextMenu($event, photo._id, photo.filename)"
+        class="photo-box" *ngFor="let photo of room.fotos" cdkDrag>
+        <img width="200" src="/_uploads/{{photo.filename}}.thumb.jpg" alt="Image" />
+      </div>
+    </div>
+    <input type="file" (change)="uploadPhoto($event, room._id)" name="myImage" accept="image/*" style="display: none"
+      #fileInput multiple />
+    <div class="div_upload">
+      <a class="a_upload" (click)="fileInput.click()">
+        <mat-icon>add</mat-icon>
+      </a>
+    </div>
+    <mat-list-item role="listitem">
+      Supplements:
+    </mat-list-item>
+    <div cdkDropList cdkDropListOrientation="horizontal" class="photo-list"
+      (cdkDropListDropped)="dropSupplement($event)">
+      <div (dblclick)="openImageDialog(supplement.filename)"
+        (contextmenu)="contextMenu($event, supplement._id, supplement.filename)" class="photo-box"
+        *ngFor="let supplement of room.supplements" cdkDrag>
+        <img width="200" src="/_uploads/{{supplement.filename}}.thumb.jpg" alt="Image" />
+      </div>
+    </div>
+    <input type="file" (change)="uploadSupplement($event, room._id)" name="myImage" accept="image/*"
+      style="display: none" #supplementInput multiple />
+    <div class="div_upload">
+      <a class="a_upload" (click)="supplementInput.click()">
+        <mat-icon>add</mat-icon>
+      </a>
+    </div>
+
+  </mat-list>
+
+</mat-card>
+
+
+<div id="div_contextmenu" [ngStyle]="{'left': left,'top': top}">
+  <div id="div_ctmenu_trigger" mat-icon-button #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
+  </div>
+  <mat-menu #menu="matMenu">
+    <button (click)="download(photoFile)" mat-menu-item>
+      <span>Download</span>
+    </button>
+    <button (click)="delete(photoID)" mat-menu-item>
+      <span>Löschen</span>
+    </button>
+  </mat-menu>
+
+</div>

@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenavcontainer">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Personal
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+         </mat-expansion-panel-header>
+        <a class ='btn' ><p (click)="Projects()" class="">Projects</p></a>
+        <a class ='btn' ><p (click)="Profile()" class="">Profile</p></a>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel *ngIf="hasAdminRights" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Administration
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+         </mat-expansion-panel-header>
+        <a class ='btn' ><p (click)="Users()" class="">Users</p></a>
+        <a class ='btn' ><p (click)="Invites()" class="">Invites</p></a>
+        <a class ='btn' ><p (click)="Viewer()" class="">Model Viewer</p></a>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+</mat-sidenav>
+  
+  <mat-sidenav-content>
+   <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

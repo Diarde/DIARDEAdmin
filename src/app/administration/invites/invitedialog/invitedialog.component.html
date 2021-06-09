@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>New Invite</h1>
+<div mat-dialog-content>
+
+  <form>
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="full-width">
+            <textarea id="desc" matInput placeholder="Description" [(ngModel)]="name" name="description"></textarea>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <div class="full-width">
+  <button mat-raised-button (click)="cancel()" color="accent">Cancel</button>
+  <button mat-raised-button [disabled]="email === ''" cdkFocusInitial (click)="submit()" color="accent" class="btnRight">Submit</button>
+  </div>
+</div>

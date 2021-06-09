@@ -1,0 +1,12 @@
+<mat-list>
+  <h3 mat-subheader>Projects</h3>
+  <div class="divScroll">
+    <mat-list-item *ngFor="let project of dataSource">
+      <p mat-line (click)="select(project)" [style.background]="selected==(project) ? 'lightblue' : ''">{{project.name}}</p>
+    </mat-list-item>
+    </div>
+</mat-list>
+
+<mat-form-field class="searchField">
+  <input matInput (keyup)="keypress()" [(ngModel)]="searchString" placeholder="Suchen">
+</mat-form-field>

@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Projekt </h1>
+<div mat-dialog-content>
+
+  <form>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" [(ngModel)]="name" name="name"
+              required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+            <textarea id="desc" matInput placeholder="Description"
+              [(ngModel)]="description"
+              name="description"></textarea>
+          </mat-form-field></td>
+      </tr></table>
+
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Abbrechen</button>
+  <button mat-raised-button [disabled]="name === ''" (click)="new()" cdkFocusInitial>Ok</button>
+</div>

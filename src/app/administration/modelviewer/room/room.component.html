@@ -1,0 +1,9 @@
+<mat-list>
+  <h3 mat-subheader>Rooms</h3>
+  <div class="divScroll">
+    <mat-list-item *ngFor="let room of rooms">
+      <p mat-line (click)="select(room)"
+         [style.background]="selected==(room) ? 'lightblue' : ''"> {{room.name}} </p>
+    </mat-list-item>
+  </div>
+</mat-list>

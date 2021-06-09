@@ -1,0 +1,28 @@
+.full-width{
+    width: 600px
+}
+
+.iptLink{
+
+    width: 90%;
+
+}
+
+.lnkClippboard{
+    float: right;
+    color: orangered;
+    cursor: pointer;
+}
+
+
+.fakeTooltip{
+    background: rgb(65, 64, 64);
+    border-radius: 0.25em;
+    padding:0.75em;
+    display: block;
+    z-index:2;
+    color:white;
+    height: fit-content;
+    width: fit-content;
+    transition:0.5s 
+  }

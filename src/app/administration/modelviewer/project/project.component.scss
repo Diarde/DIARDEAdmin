@@ -1,0 +1,28 @@
+.divScroll{
+    height: 400px;
+    overflow: auto;
+    scrollbar-color: black white;
+    scrollbar-width: thin;
+  }
+  
+  .divScroll::-webkit-scrollbar-track
+  {
+    background-color: #FFFFFF;
+  }
+  
+  .divScroll::-webkit-scrollbar
+  {
+      width: 3px;
+      background-color: #fff;
+  }
+  
+  .divScroll::-webkit-scrollbar-thumb
+  {
+      background-color: #000000;
+  }
+  
+  .searchField{
+    padding-left: 16px;
+    padding-top: 10px;
+  }
+  

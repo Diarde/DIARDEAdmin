@@ -1,0 +1,29 @@
+<mat-card class="card">
+  <mat-card-title>
+    Users
+  </mat-card-title>
+  <mat-card-header>
+  </mat-card-header>
+
+  <table mat-table [dataSource]="userList" [multiTemplateDataRows]='true' class="mat-elevation-z8">
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element">{{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="verified">
+      <th mat-header-cell *matHeaderCellDef> Verified </th>
+      <td mat-cell *matCellDef="let element"> {{element.verified}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isadmin">
+      <th mat-header-cell *matHeaderCellDef> Admin </th>
+      <td mat-cell *matCellDef="let element"> {{element.roles.includes(1)}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

@@ -1,0 +1,10 @@
+<mat-list>
+  <h3 mat-subheader>Geometries</h3>
+  <div class="divScroll">
+  <mat-list-item *ngFor="let geometry of geometries">
+      <p mat-line  (click)="select(geometry)"
+      [style.background]="selected==(geometry) ? 'lightblue' : ''">{{geometry.name}}</p>
+  </mat-list-item>
+</div>
+</mat-list>
+

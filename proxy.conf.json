@@ -1,0 +1,20 @@
+{
+    "/_api/*": {
+        "target": "https://admin.diarde.com", 
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/_api": "/_api"
+        }
+    },
+    "/_uploads/*": {
+        "target": "https://admin.diarde.com", 
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/_uploads": "/_uploads"
+        }
+    }
+}

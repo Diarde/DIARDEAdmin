@@ -1,0 +1,41 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <table class="full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="full-width" color="accent">
+              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="full-width" color="accent">
+              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required
+                (keyup.enter)="onSubmit()">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+    </form>
+  </mat-card-content>
+  <div *ngIf="isWrong">
+    {{errorMessage}}
+  </div>
+  <div class="divLink">
+    <a href="#" (click)="pwrequest(); false">Forgot your password?</a>
+  </div>
+  <div id="divButtons">
+    <mat-card-actions id="btnLogin">
+      <button mat-raised-button (click)="onSubmit()" color="accent">Login</button>
+    </mat-card-actions>
+    <mat-card-actions id="btnSignup">
+      <button mat-raised-button (click)="onSignup()" color="accent">Sign Up</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

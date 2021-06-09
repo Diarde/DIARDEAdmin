@@ -1,0 +1,13 @@
+<mat-list>
+  <h3 mat-subheader>Revisions</h3>
+  <div class="divScroll">
+  <mat-list-item *ngFor="let revision of revisions">
+    <div [ngSwitch]="(revision.model !== undefined) && (revision.model !== null)">
+      <p mat-line *ngSwitchCase="false" style="color: grey">{{revision.date}}</p>
+      <p mat-line *ngSwitchCase="true" style="color: black" (click)="open(revision.model)">
+      {{revision.date}}</p>
+    </div>
+  </mat-list-item>
+</div>
+</mat-list>
+

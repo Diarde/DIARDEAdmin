@@ -1,0 +1,56 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Models</mat-card-title>
+        <div class="title">
+        </div>
+    </mat-card-header>
+    <mat-card-content class="cardLists">
+        <div class="full_width">
+            <mat-tab-group class="full_width" (selectedTabChange)="tabClick($event)">
+                <mat-tab label="Model">
+                    <canvas #canvas class="babylon-canvas" id="babylon-canvas" [ngStyle]="{'height.px': 700}"></canvas>
+                </mat-tab>
+                <mat-tab label="Floorplan">
+                    <div style="height: 700px; width: 100%; background: black">
+                        <div class="svg" [innerHTML]="svg">
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Canvas">
+                    <div style="height: 700px; width: 100%; background: black">
+                        <canvas id="fabric-canvas"></canvas>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <div class="grid_outer">
+
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Selector</mat-card-title>
+        <div class="title">
+        </div>
+    </mat-card-header>
+    <mat-card-content class="cardLists">
+        <div div="divLists">
+            <div class="divList">
+                <app-project></app-project>
+            </div>
+            <div class="divList">
+                <app-room></app-room>
+            </div>
+            <div class="divList">
+                <app-geometry></app-geometry>
+            </div>
+            <div class="divList">
+                <app-revision></app-revision>
+            </div>
+            <div>
+                <app-image></app-image>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

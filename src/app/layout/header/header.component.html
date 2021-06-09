@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <img src="./assets/logo_inverted.png">
+      <!--<h1 color="primary">Diarde</h1>-->
+    </span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="example-spacer"></span>
+
+    <div class="title">
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="profile" color="accent">
+          <mat-icon>account_circle</mat-icon>
+      </button>
+  </div>
+    <!--<button mat-button>About</button>
+    <button mat-button>Contact</button>-->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-menu #appMenu="matMenu">
+  <div class="divMenu">
+      <span class="loginname"></span>
+      <button mat-menu-item (click)="signOut()">Logout</button>
+  </div>
+</mat-menu>

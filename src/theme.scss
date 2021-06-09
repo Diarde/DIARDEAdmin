@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mat-black: (
+   500: black,
+  contrast: (
+    500: white,
+  )
+);
+
+$mat-orangered: (
+  500: #ff4500,
+  contrast: (
+    100: #ff4500,
+  )
+);
+
+/* ======== Angular material custom themes ======== */ 
+$my-custom-primary: mat-palette($mat-black, 500);
+$my-custom-accent: mat-palette($mat-orangered,  500);
+$my-custom-warn: mat-palette($mat-orange, 500);
+
+$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+
+@include angular-material-theme($my-custom-theme);
